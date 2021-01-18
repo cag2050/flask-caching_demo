@@ -10,3 +10,4 @@ Flask-Cache 学习资料 | 说明
 官方文档 | http://www.pythondoc.com/flask-cache/index.html
 Flask-Cache缓存使用小记 | https://heshangbuxitou.github.io/2017/11/21/flask-cache/
 Flask-Caching | https://flask-caching.readthedocs.io/en/latest/
+13.2 使用Flask-Caching设置缓存（《Flask Web开发实战：入门、进阶与原理解析》） | https://weread.qq.com/web/reader/26132b70715ec2fd26119eek1f032c402131f0e3dad99f3
