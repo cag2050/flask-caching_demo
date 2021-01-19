@@ -1,7 +1,7 @@
 ### 说明
 1. Flask-Caching 是 Flask-Cache 扩展（ https://github.com/thadeusb/flask-cache ）的派生（fork），旨在替代缺乏维护的后者。
 2. 为了区分程序运行环境，Flask提供了一个 FLASK_ENV 环境变量用来设置环境，默认为 production（生产）。在开发时，我们可以将其设为 development（开发），这会开启所有支持开发的特性。
-3. 
+3. `@cache.cached()` 和 `@cache.memoize()` 都可以缓存视图函数和不包含参数的非视图函数；如果非视图函数包含参数，则需要用 `@cache.memoize()`。 
 
 ### Flask-Cache 学习资料
 
