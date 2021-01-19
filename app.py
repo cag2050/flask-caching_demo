@@ -16,7 +16,9 @@ basedir = basedirs + '/cache'
 
 cache = Cache(config={
     'CACHE_TYPE': 'filesystem',
-    'CACHE_DIR': basedir
+    'CACHE_DIR': basedir,
+    # 最大的缓存条目数，超过该数会删除一些缓存条目。仅仅用于SimpleCache和 FileSystemCache。
+    'CACHE_THRESHOLD': 5
 })
 # '''
 
