@@ -1,9 +1,6 @@
-from flask import Flask, request
-# from flask_cache import Cache
-# 可使用 flask_caching 代替 flask_cache
-from flask_caching import Cache
 import os
-import random
+from flask import Flask, request
+from flask_caching import Cache
 
 app = Flask(__name__)
 
@@ -14,7 +11,6 @@ app = Flask(__name__)
 # '''
 basedirs = os.path.abspath(os.path.dirname(__file__))
 basedir = basedirs + '/cache'
-
 cache = Cache(config={
     'CACHE_TYPE': 'filesystem',
     'CACHE_DIR': basedir,
@@ -36,12 +32,10 @@ def test_cached():
 
 
 @app.route('/test_cached_query_string')
-# 包含查询参数
-# 在对包含查询参数的路由使用cache.cached()装饰器时，需要将参数query_string设为True，这会将排序后的查询参数散列值作为键
+# 在对包含查询参数的路由，使用cache.cached()装饰器时，需要将参数query_string设为True，这会将排序后的查询参数散列值作为键
 @cache.cached(query_string=True)
 def test_cached_query_string():
-    # 在linux下使用curl访问 多参数url GET参数问题: https://www.cnblogs.com/z-books/p/6228284.html ,
-    # linux命令行里curl请求例子：curl http://localhost:5000/test_cached_query_string\?a=1\&b=2
+    # linux命令行里curl请求例子：curl 'http://localhost:5000/test_cached_query_string?a=1&b=2'
     print('test_cached_query_string: 调用了，没走缓存时，会打印')
     a = request.args.get('a', '')
     b = request.args.get('b', '')
