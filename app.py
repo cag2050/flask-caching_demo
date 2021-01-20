@@ -4,10 +4,10 @@ from flask_caching import Cache
 
 app = Flask(__name__)
 
-# simple
+# CACHE_TYPE: simple
 # cache = Cache(config={'CACHE_TYPE': 'simple'})
 
-# filesystem
+# CACHE_TYPE: filesystem
 # '''
 basedirs = os.path.abspath(os.path.dirname(__file__))
 basedir = basedirs + '/cache'
